@@ -28,7 +28,6 @@ const handleLoad = () => {
   document.body.classList.add('loaded');
   document.body.classList.remove('loaded_hiding');
 };
-
 window.onload = handleLoad;
 
 form.addEventListener('submit', async e => {
