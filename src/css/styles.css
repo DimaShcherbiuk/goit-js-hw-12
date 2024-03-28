@@ -114,10 +114,10 @@ img {
   justify-content: center;
   align-items: center;
   position: relative;
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   margin: auto;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .loader:before,
@@ -154,3 +154,58 @@ img {
 }
 
 /* ======/LOADER======= */
+/* =======LOAD MORE==== */
+
+.btn-load-more {
+  background: #4e75ff;
+  border-radius: 8px;
+  width: 125px;
+  height: 40px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  font: 500 16px / 1.5 'Montserrat', sans-serif;
+  color: #fff;
+  margin: 40px auto;
+}
+/* ======/LOAD MORE===== */
+
+/* =======MESSAGE======= */
+
+.end-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: 400 16px / 1.5 'Montserrat', sans-serif;
+  color: #2e2f42;
+  margin: 40px auto;
+  text-align: center;
+}
+/* ======/MESSAGE======= */
+
+/* =======SCROLL======= */
+
+.scroll-top {
+  background: #4e75ff;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 400ms;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.scroll-top:hover {
+  background: #6c8cff;
+}
+
+.icon {
+  fill: #fff;
+}
+/* ======/SCROLL======= */

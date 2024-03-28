@@ -1,15 +1,16 @@
-import { setGallery } from '../main';
-import { imageSet } from '../main';
-
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
-export function renderFunction() {
-  setGallery.innerHTML = '';
+export const setGallery = document.querySelector('.gallery');
 
-  const imagesGallery = imageSet
-    .map(
-      image => `<li class="img-blok">
+const lightbox = new SimpleLightbox('.gallery a', {
+  captionsData: 'alt',
+});
+lightbox.refresh();
+
+export function renderFunction(imageSet) {
+  imageSet.forEach(image => {
+    const imagesGallery = `<li class="img-blok">
         <a href="${image.largeImageURL}">     
     <img  src="${image.webformatURL}"
     data-source="${image.largeImageURL}"
@@ -21,14 +22,18 @@ export function renderFunction() {
       <li><h3>downloads</h3><p>${image.downloads}</p></li>
      </ul>
    </a>
-   </li>`
-    )
-    .join('');
+   </li>`;
 
-  setGallery.insertAdjacentHTML('beforeend', imagesGallery);
-
-  const lightbox = new SimpleLightbox('.gallery a', {
-    captionsData: 'alt',
+    setGallery.insertAdjacentHTML('beforeend', imagesGallery);
   });
   lightbox.refresh();
+}
+
+export function showEndOfCollectionMessage() {
+  const endMessage = document.createElement('p');
+  endMessage.classList.add('end-message');
+  endMessage.textContent =
+    "We're sorry, but you've reached the end of search results.";
+
+  setGallery.insertAdjacentElement('afterend', endMessage);
 }
